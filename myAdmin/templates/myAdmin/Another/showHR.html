@@ -1,0 +1,86 @@
+
+
+
+
+{% extends 'myAdmin/master.html' %}
+
+{% block tcontent %}
+myAdmin - Show HR's
+{% endblock %}
+
+{% block childcontent %}
+
+
+
+
+
+  <div class="section-heading">
+    <h6>
+      <a href="/myadmin/index/" style="color: blue;">< BACK</a>
+    </h6>
+  </div>
+  <div class="section-heading">
+    <h2 style="color: white;">
+      | These are HR's
+    </h2>
+  </div>
+
+    <!-- Content Header (Page header) -->
+    
+    <!-- Main content -->
+    <section class="content" >
+      <div class="row" >
+        <div class="col-12" >
+          <div class="card" >
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th><center>Full Name</center></th>
+                  <th><center>Email</center></th>
+                  <th><center>Age</center></th>
+                  <th><center>Mobile No.</center></th>
+                  <th><center>Experience</center></th>
+                  <th><center>Specialization</center></th>
+                  <th><center>UserName</center></th>
+                  <th><center>EDITS</center></th>
+                  <th><center>DELETES</center></th>
+                </tr>
+                </thead>
+                {%  for data in result  %}
+                <tbody>
+                <tr>
+                  <td><center>{{data.FullName}}</center></td>
+                  <td><center>{{data.EmailId}}</center></td>
+                  <td><center>{{data.Age}}</center></td>
+                  <td><center>{{data.MobileNo}}</center></td>
+                  <td><center>{{data.WorkExperience}}</center></td>
+                  <td><center>{{data.Specialization}}</center></td>
+                  <td><center>{{data.UserId}}</center></td>
+                  <td><center><a href="/myadmin/edits/?var1={{data.id}}&var2=HR"  style="color:green">EDIT</a></center></td>
+                  <td><center><a href="/myadmin/deletes/?var1={{data.id}}&var2=HR"  style="color:red">DELETE</a></center></td>
+                </tr>
+                </tbody>
+                {% endfor %}
+              </table>
+            </div>
+            
+            <!-- /.card-body -->
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+</div>
+
+
+
+{% endblock %}
+
+

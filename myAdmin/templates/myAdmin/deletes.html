@@ -1,0 +1,102 @@
+
+
+
+
+
+
+
+
+{% extends 'myAdmin/master.html' %}
+
+{% block tcontent %}
+myAdmin - Delete {{fromwhere}}'s
+{% endblock %}
+
+{% block childcontent %}
+
+
+
+
+
+
+
+            <!-- Forms -->
+            <section class="forms">
+                  <div class="col-md-12">
+                    <div class="section-heading">
+                      <h2 style="color: white;">
+                        | Delete {{fromwhere}}'s
+                      </h2>
+                    </div>
+                    <form id="contact" action="" method="post">
+                      {% csrf_token %}
+                      <br>
+                    <input type="hidden" name="txthidden" value="{{value.id}}" />
+                    <input type="hidden" name="fromwhere" value="{{fromwhere}}" />
+                      <div class="row" >
+                        <div class="col-md-6">
+                          <fieldset>
+                            <input name="txtfname" type="text" value="{{value.FullName}}"  placeholder="Enter Full Name....." required="">
+                          </fieldset>
+                        </div>
+                        <div class="col-md-6">
+                          <fieldset>
+                            <input name="txtemail" type="text" value="{{value.EmailId}}" class="form-control" id="email" placeholder="Enter Email....." required="">
+                          </fieldset>
+                        </div>
+                        <div class="col-md-4">
+                          <fieldset>
+                            <input name="txtage" type="number" value="{{value.Age}}" class="form-control" placeholder="Enter Age....." required="">
+                          </fieldset>
+                        </div>
+                        <div class="col-md-4">
+                          <fieldset>
+                            <input name="txtworkexp" type="number" value="{{value.WorkExperience}}" class="form-control" placeholder="Write there Work-Experience....." required="">
+                          </fieldset>
+                        </div>
+                        <div class="col-md-4">
+                          <select name="txtprojectcategory" id="category">
+                            <option value="" >Select Specialization</option>
+                            {%  for data in values  %}
+                            <option value="{{data.Language}}" {% if value.Specialization == data.Language %} selected {% endif %}>{{data.Language}}</option>
+                            {%  endfor  %}
+                          </select>
+                        </div>
+                        <div class="col-md-4">
+                          <fieldset>
+                            <input name="txtmobileno" type="number" value="{{value.MobileNo}}" class="form-control" placeholder="Enter Mobile Number....." required="">
+                          </fieldset>
+                        </div>
+                        <div class="col-md-4">
+                          <fieldset>
+                            <input name="txtuname" type="text" value="{{value.UserId}}" class="form-control" placeholder="Generate Username....." required="">
+                          </fieldset>
+                        </div>
+                        <div class="col-md-4">
+                          <fieldset>
+                            <input name="txtpassword" type="text"  value="{{value.Password}}" class="form-control"  placeholder="Generate Password....." required="">
+                          </fieldset>
+                        </div>
+                        <div class="col-md-12">
+                          <fieldset>
+                            <input  style="height:75px" name="txtaddress" value="{{value.Address}}" type="text" class="form-control" placeholder="Enter Address....." required="">
+                          </fieldset>
+                        </div>
+                        <div class="col-md-12">
+                          <button type="submit" id="form-submit" class="button">Delete {{fromwhere}}</button>
+                          <b style="color: red"></b>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  </div>
+                  </div>
+
+
+
+
+
+
+
+
+{% endblock %}

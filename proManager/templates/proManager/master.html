@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>
+
+
+
+
+
+
+
+
+{% block tcontent %}
+
+{% endblock %}
+
+
+
+
+
+
+
+    </title>
+
+
+
+
+
+
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/static/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="/static/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="/static/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="/static/plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/static/dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="/static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="/static/plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="/static/plugins/summernote/summernote-bs4.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!--
+Ramayana CSS Template
+https://templatemo.com/tm-529-ramayana
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/static/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/assets/css/templatemo-style.css">
+    <link rel="stylesheet" href="/static/assets/css/owl.css">
+
+  </head>
+
+<body class="is-preload" style="background-color:#000d1a;" >
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+        <div id="main">
+          <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+              <div class="logo">
+                <a href="/index/">pro<b style="color:black;">Manager</b> </a>
+              </div>
+            </header>
+
+
+
+
+
+
+
+
+{% block childcontent %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+      <!-- Sidebar -->
+        <div id="sidebar" >
+
+          <div class="inner">
+
+            <!-- Search Box -->
+            <section id="search" class="alt">
+              <br>
+              <div class="primary-button">
+                <center>
+                <a href="/logout?var={{activePMID}}">  <b style="color:red">LogOut</b> - <b style="color:blue;">{{pmName}}</b> </a>
+                </center>
+              </div>
+            </section>
+              
+            <!-- Menu -->
+            <nav id="menu">
+              <ul>
+                <li><a href="/promanager/?var={{activePMID}}">>> Home</a></li>
+                <li><a href="/promanager/AssignProjectToDeveloperByProjectManager/?var={{activePMID}}">>> Assign Project to Dev's</a></li>
+                <li><a href="/promanager/ShowAllReportsSendByDevs/?var={{activePMID}}">>> View Developer's Report</a></li>
+                <li><a href="/promanager/SendReportToAdmin/?var1={{activePMID}}&var2=Nothing">>> Send Reports to Admin</a></li>
+              </ul>
+            </nav>
+
+    
+          </div>
+        </div>
+
+    </div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/static/assets/js/browser.min.js"></script>
+    <script src="/static/assets/js/breakpoints.min.js"></script>
+    <script src="/static/assets/js/transition.js"></script>
+    <script src="/static/assets/js/owl-carousel.js"></script>
+    <script src="/static/assets/js/custom.js"></script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,66 @@
+
+
+
+
+
+
+
+
+{% extends 'myAdmin/master.html' %}
+
+{% block tcontent %}
+myAdmin - Recruit Project Manager
+{% endblock %}
+
+{% block childcontent %}
+
+
+
+
+
+
+
+            <!-- Forms -->
+            <section class="forms">
+                  <div class="col-md-12">
+                    <div class="section-heading">
+                      <h2 style="color: white;">
+                        | Promote Developer as proManager.
+                      </h2>
+                    </div>
+                    <form id="contact" action="" method="post">
+                      {% csrf_token %}
+                      <br>
+                      <br>
+                      <br>
+                      <div class="row" >
+                        <div class="col-md-12">
+                          <select name="txtdevelopercategory" id="category">
+                            <option value="" selected>Select Developer</option>
+                            {%  for data in values  %}
+                            <option value="{{data.id}}">{{data.FullName}}, as {{data.UserId}}</option>
+                            {%  endfor  %}
+                          </select>
+                        </div>
+                        <div class="col-md-12">
+                          <button type="submit" id="form-submit" class="button">Promote as proManager</button>
+                          <b style="color: red">{{result}}</b>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  </div>
+                  </div>
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+

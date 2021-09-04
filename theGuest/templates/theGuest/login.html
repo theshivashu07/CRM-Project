@@ -1,0 +1,74 @@
+{% extends 'theGuest/master.html' %}
+
+{% block tcontent %}
+projectCRM - {{fromwhere}}'s Login
+{% endblock %}
+
+{% block childcontent %}
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+    <!-- ***** Contact Us Start ***** -->
+    <section class="section colored" id="contact-us">
+        <div class="container">
+            <!-- ***** Section Title Start ***** -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="center-heading">
+                        <h2 class="section-title"><b style="color: blue;">_____{{fromwhere}}'s Login_____</b></h2>
+                    </div>
+                </div>
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="center-text">
+                    </div>
+                </div>
+            </div>
+            <!-- ***** Section Title End ***** -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="contact-form" style="width: 100%;">
+                        <form action="" method="post" >
+                        {% csrf_token %}
+                            <center>
+                            <input type="hidden" name="fromwhere" value="{{fromwhere}}" />
+                            <div class="col-md-6">
+                              <fieldset>
+                                <input name="txtname" type="text" class="form-control" id="name" style="" placeholder="Enter Username or Email" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6">
+                              <fieldset>
+                                <input name="txtpassword" type="password" class="form-control" placeholder="Enter Password" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="main-button">Login as {{fromwhere}}</button>
+                              </fieldset>
+                            </div>
+                            <b style="color: red">{{passmsg}}</b>
+                            </center>
+                        </form>
+                    </div>
+                </div>
+                <!-- ***** Contact Form End ***** -->
+            </div>
+        </div>
+    </section>
+    <!-- ***** Contact Us End ***** -->
+
+
+
+
+
+{% endblock %}
+
+
+
+

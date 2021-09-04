@@ -1,0 +1,74 @@
+
+
+
+
+
+
+
+
+{% extends 'myAdmin/master.html' %}
+
+{% block tcontent %}
+myAdmin - Assign Project to proManager
+{% endblock %}
+
+{% block childcontent %}
+
+
+
+
+
+
+
+            <!-- Forms -->
+            <section class="forms">
+                  <div class="col-md-12">
+                    <div class="section-heading">
+                      <h2 style="color: white;">
+                        | Assign Project to Project Manager.
+                      </h2>
+                    </div>
+                    <form id="contact" action="" method="post">
+                      {% csrf_token %}
+                      <br>
+                      <br>
+                      <div class="row" >
+                        <div class="col-md-12">
+                          <select name="txtprojectcategory" id="category">
+                            <option value="" selected>Select Project</option>
+                            {%  for data in projectvalues  %}
+                            <option value="{{data.id}}">{{data.ProjectName}}, in {{data.ProjectLanguage}}.</option>
+                            {%  endfor  %}
+                          </select>
+                        </div>
+                        <div class="col-md-12">
+                          <select name="txtpmcategory" id="category">
+                            <option value="" selected>Select Project Manager</option>
+                            {%  for data in pmvalues  %}  
+                            <option value="{{data.id}}">{{data.FullName}}</option>  
+                            {%  endfor  %}  
+                          </select>  
+                        </div>
+                        <div class="col-md-12">
+                          <button type="submit" id="form-submit" class="button">Assign Project</button>
+                          <b style="color: red">{{result}}</b>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </section>
+                </div>
+                </div>
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,88 @@
+
+
+
+
+{% extends 'myAdmin/master.html' %}
+
+{% block tcontent %}
+myAdmin - Send Alls Reports
+{% endblock %}
+
+{% block childcontent %}
+
+
+
+
+
+
+  <div class="section-heading">
+    <h6>
+      <a href="/myadmin/index/" style="color: blue;">< BACK</a>
+    </h6>
+  </div>
+  <div class="section-heading">
+    <h2 style="color: white;">
+      | Latest Reports
+    </h2>
+  </div>
+
+
+
+    <!-- Content Header (Page header) -->
+    
+    <!-- Main content -->
+    <section class="content">
+      <div class="row" >
+        <div class="col-12" >
+          <div class="card" >
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th><center>Report Date</center></th>
+                  <th><center>Report Title</center></th>
+                  <th><center>Report Status</center></th>
+                  <th><center>Report Discription</center></th>
+                  <th><center>Report By (Devs)</center></th>
+                  <th><center>Report By (PM)</center></th>
+                  <th><center>Send Report</center></th>
+                </tr>
+                </thead>
+                {%  for data in result  %}
+                <tbody>
+                <tr>
+                  <td><center>{{data.ReportDate}}</center></td>
+                  <td><center>{{data.ReportTitle}}</center></td>
+                  <td><center>{{data.ReportStatus}}</center></td>
+                  <td><center>{{data.ReportDiscription}}</center></td>
+                  <td><center>{{data.ReportsByDevs}}</center></td>
+                  <td><center>{{data.ReportsByPM}}</center></td>
+                  <td><center><a href="/myadmin/SendReportToHR/?var={{data.ReportsID}}"> <b style="color:red">REPORT TO HR</b></a></center></td>
+                </tr>
+                </tbody>
+                {% endfor %}
+              </table>
+
+            </div>
+            
+            <!-- /.card-body -->
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+ 
+  <center><b style="color: red">{{message}}</b></center>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+</div>
+
+
+
+{% endblock %}
+
+

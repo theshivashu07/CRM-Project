@@ -1,0 +1,88 @@
+
+
+
+
+
+
+{% extends 'imDeveloper/master.html' %}
+
+{% block tcontent %}
+imDeveloper - Send Report to PrpManager
+{% endblock %}
+
+{% block childcontent %}
+
+
+
+
+
+            <!-- Forms -->
+            <section class="forms">
+                  <div class="col-md-12">
+                    <div class="section-heading">
+                      <h2 style="color: white;">
+                        | Send Report to ProManager
+                      </h2>
+                    </div>
+                    <form id="contact" action="" method="post">
+                      {% csrf_token %}
+                      <br>
+                      <div class="row" >
+                      	<div class="col-md-12">
+                          <select name="txtreporttitle" id="category">
+                            <option value="" selected>Select Reports Title</option>
+                            {%  for data in DWAP  %}
+                            <option value="{{data.ProjectId}}">{{data.ProjectName}}</option>
+                            {%  endfor  %}
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <select name="txtreportstatus" id="category">
+                            <option value="" selected>Select Report Status</option>
+                            {%  for data in ReportStatus  %}
+                            <option value="{{data.Status}}">{{data.Status}}</option>
+                            {%  endfor  %}
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <fieldset>
+                            <input name="txtreportdate" type="text" class="form-control"  placeholder="Report Date....." required="">
+                          </fieldset>
+                        </div>
+                        <div class="col-md-12">
+                          <fieldset>
+                            <input name="txtreportdiscription" type="text" class="form-control"  placeholder="Report Discription....." required="">
+                          </fieldset>
+                        </div>
+                        <div class="col-md-6">
+                          <select name="txtreportbycategory" id="category">
+                            <option value="" selected>Select Report by</option>
+                            {%  for data in DevsNotPM  %}
+                            <option value="{{data.id}}">{{data.FullName}}</option>
+                            {%  endfor  %}
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <select name="txtreporttocategory" id="category">
+                            <option value="" selected>Select Report to</option>
+                            {%  for data in PMs  %}
+                            <option value="{{data.id}}">{{data.FullName}}</option>
+                            {%  endfor  %}
+                          </select>
+                        </div>
+                        <div class="col-md-12">
+                          <button type="submit" id="form-submit" class="button">Submit</button>
+                          <b style="color: red">{{result}}</b>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  </div>
+                  </div>
+
+
+
+
+
+
+{% endblock %}
